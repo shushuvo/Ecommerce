@@ -13,6 +13,7 @@ This project is a backend for an e-commerce application built using **Node.js** 
 2. **Install Dependencies**  
    ```bash
    npm install express typescript @types/node @types/express
+   npm install mongoose
    ```
 3. **Setup TypeScript Configuration**  
    Initialize TypeScript:  
@@ -58,7 +59,9 @@ src/
   - Admin operations (edit products).  
 
 ---
-
+## **Impliments**:
+  Mongo db atlas
+---
 ## **How to Run**
 
 1. **Compile TypeScript:**  
