@@ -60,7 +60,7 @@ src/
 
 ---
 ## **Impliments**:
-  Mongo db atlas
+- **Mongo db atlas**
 ---
 ## **How to Run**
 
