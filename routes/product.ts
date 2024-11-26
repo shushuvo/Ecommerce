@@ -1,24 +1,24 @@
 import { Router } from 'express';
 
 //model schema importing section
-import { User } from "../modles/userregister";
+import { Product } from "../modles/products";
 
-const regform = Router();
+const product = Router();
 
-//user input taking section
-regform.post('/register', (req, res) => {
+//input taking section
+product.post('/productupdate', (req, res) => {
 const body = req.body; 
 console.log('Request body:', body); 
 res.json({ message: 'Data received', body }); 
                 
                 // Insert a new user
-                const newUser = new User({
-                password: body.password,
-                email: body.email,
+                const newProduct = new Product({
+                productname: body.productname,
+                productammount: body.productammount,
                 });
     
                 // Save the user to the database
-                newUser
+                newProduct
                 .save()
                 .then(() => {
                 console.log("User saved successfully");
@@ -27,4 +27,4 @@ res.json({ message: 'Data received', body });
 
 
 
-export default regform;
+export default product;

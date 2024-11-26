@@ -6,7 +6,7 @@ const userSchema = new mongoose.Schema({
   email: String,
 },
 {
-  collection: "customUsersCollection", // Specify collection name here
+  collection: "register", // Specify collection name here
 }
 );
 

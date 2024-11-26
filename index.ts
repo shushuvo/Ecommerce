@@ -5,7 +5,8 @@
 //rout importing section
 import routes from './routes/rout';
 import regform from './routes/regform';
-
+import product from './routes/product';
+import productlist from './routes/productlist';
 
 import express from "express";
 import mongoose from "mongoose";
@@ -23,3 +24,5 @@ app.use(bodyParser.json());
 //rout calling section
 app.use('/', routes);
 app.use('/', regform);
+app.use('/', product);
+app.use('/', productlist);
