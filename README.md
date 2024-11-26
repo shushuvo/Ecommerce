@@ -62,6 +62,10 @@ src/
 ## **Impliments**:
 - **Mongo db atlas**
 ---
+## **Issues**:
+- **Post request body undefined**:
+- `npm install body-parser`
+---
 ## **How to Run**
 
 1. **Compile TypeScript:**  
