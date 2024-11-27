@@ -14,6 +14,9 @@ This project is a backend for an e-commerce application built using **Node.js** 
    ```bash
    npm install express typescript @types/node @types/express
    npm install mongoose @types/mongoose
+   npm install jsonwebtoken @types/jsonwebtoken
+   npm install bcryptjs @types/bcryptjs
+   
    ```
 3. **Setup TypeScript Configuration**  
    Initialize TypeScript:  
@@ -61,6 +64,8 @@ src/
 ---
 ## **Impliments**:
 - **Mongo db atlas**
+- **Jsonwebtoken**
+- **Bcryptjs**
 ---
 ## **Issues**:
 - **Post request body undefined**:
