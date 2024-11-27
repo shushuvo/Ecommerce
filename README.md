@@ -64,6 +64,8 @@ src/
 ---
 ## **Impliments**:
 - **Mongo db atlas**
+- **Jsonwebtoken**
+- **Bcryptjs**
 ---
 ## **Issues**:
 - **Post request body undefined**:
