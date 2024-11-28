@@ -16,6 +16,7 @@ This project is a backend for an e-commerce application built using **Node.js** 
    npm install mongoose @types/mongoose
    npm install jsonwebtoken @types/jsonwebtoken
    npm install bcryptjs @types/bcryptjs
+   npm install cookie-parser @types/cookie-parser
    
    ```
 3. **Setup TypeScript Configuration**  
