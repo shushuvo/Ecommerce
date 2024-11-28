@@ -1,11 +1,8 @@
 import { Router} from "express";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
-//import { authMiddleware, AuthenticatedRequest } from "../middlewares/authMiddleware";
-
 
 const JWT_SECRET = "your_hardcoded_secret_key";
-
 
 // Login route
 import { User } from "../modles/userregister";
@@ -20,7 +17,19 @@ loginjwt.post('/login', async (req, res) => {
                            // res.status(200).json(loginjwt); 
                                         if(loginjwt.password == req.body.password)
                                         {
-                                          res.status(200).json("login successfull"); 
+                                         
+                                          const token = jwt.sign({ email: req.body.email }, JWT_SECRET, { expiresIn: "1h" });
+                                          // Set the token as an HTTP-only cookie
+                                          res.cookie("token", token, 
+                                          {
+                                          httpOnly: true, // Prevents client-side access
+                                          secure: process.env.NODE_ENV === "production", // Ensures HTTPS in production
+                                          maxAge: 3600000, // 1 hour
+                                          });
+                                          
+                                          // Send a success response
+                                          res.status(200).json({ message: "Login successful" });
+
                                         }
                             }
                 else{res.status(404).json("username or password incorrect"); }
