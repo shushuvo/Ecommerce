@@ -5,10 +5,11 @@
 //rout importing section
 import routes from './routes/rout';
 import regform from './routes/regform';
-import product from './routes/product';
-import productlist from './routes/productlist';
+import product from './controllers/product';
+import productlist from './controllers/productlist';
 import loginjwt from './routes/auth';
 import protectedrout from './routes/protected';
+import cart from './controllers/addtocart';
 
 //dependencies
 import express from "express";
@@ -35,3 +36,4 @@ app.use('/', product);
 app.use('/', productlist);
 app.use('/', loginjwt);
 app.use('/', protectedrout);
+app.use('/',cart);
