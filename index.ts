@@ -10,6 +10,8 @@ import productlist from './controllers/productlist';
 import loginjwt from './routes/auth';
 import protectedrout from './routes/protected';
 import cart from './controllers/addtocart';
+import productdelt from './controllers/deleteproduct';
+import cartdelt from './controllers/deletefromcart';
 
 //dependencies
 import express from "express";
@@ -37,3 +39,5 @@ app.use('/', productlist);
 app.use('/', loginjwt);
 app.use('/', protectedrout);
 app.use('/',cart);
+app.use('/',productdelt);
+app.use('/',cartdelt);

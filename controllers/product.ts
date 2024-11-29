@@ -26,5 +26,4 @@ res.json({ message: 'Data received', body });
 }); 
 
 
-
 export default product;
