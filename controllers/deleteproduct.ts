@@ -1,11 +1,12 @@
-import { Router} from "express";
+import { Router, Response} from "express";
 
 import { Product } from "../modles/products";
 
 const productdelt = Router();
-
+//varify import section
+import { authMiddleware, AuthenticatedRequest } from "../ middleware/admin";
 // Fetch data from MongoDB
-productdelt.delete('/productdelt', async (req, res) => {
+productdelt.delete('/productdelt',authMiddleware, async  (req: AuthenticatedRequest, res: Response)=> {
   try {
     const productdelt = await Product.deleteOne({ _id: req.body.id });
                 if(productdelt){ 

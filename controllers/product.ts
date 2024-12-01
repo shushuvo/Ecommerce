@@ -1,12 +1,13 @@
-import { Router } from 'express';
+import { Router,Response } from 'express';
 
 //model schema importing section
 import { Product } from "../modles/products";
 
 const product = Router();
-
+//varify import section
+import { authMiddleware, AuthenticatedRequest } from "../ middleware/admin";
 //input taking section
-product.post('/productupdate', (req, res) => {
+product.post('/productupdate', authMiddleware,(req: AuthenticatedRequest, res: Response) => {
 const body = req.body; 
 console.log('Request body:', body); 
 res.json({ message: 'Data received', body }); 

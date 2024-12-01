@@ -1,12 +1,13 @@
-import { Router } from 'express';
+import { Router,Response } from 'express';
 
 // Model schema importing section
 import { Product } from "../modles/products"; // Corrected "modles" to "models"
 
 const productedit = Router();
-
+//varify import section
+import { authMiddleware, AuthenticatedRequest } from "../ middleware/admin";
 // Update product section
-productedit.put('/productedit', (req, res) => {
+productedit.put('/productedit',authMiddleware, (req: AuthenticatedRequest, res: Response) => {
     const { productId, productname, productammount } = req.body; // Extracting fields from the request body
 
     // Find and update the product
