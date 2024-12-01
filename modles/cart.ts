@@ -11,3 +11,4 @@ const CartSchema = new mongoose.Schema({
 );
 
 export const Cart = mongoose.model("Cart", CartSchema);
+//make the product id uniqe field

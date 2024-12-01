@@ -8,7 +8,7 @@ const cartdelt = Router();
 import { authMiddleware, AuthenticatedRequest } from "../ middleware/verify";
 
 // Fetch data from MongoDB
-cartdelt.delete('/cartdelt', async (req: AuthenticatedRequest, res: Response) => {
+cartdelt.delete('/cartdelt', authMiddleware, async (req: AuthenticatedRequest, res: Response) => {
 const X = req.user ? JSON.parse(JSON.stringify(req.user)) : null; // Convert req.user to JSON
   try {
     const productdelt = await Cart.deleteOne({ username: X.email, productid: req.body.productid });

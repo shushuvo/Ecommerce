@@ -12,6 +12,9 @@ import protectedrout from './routes/protected';
 import cart from './controllers/addtocart';
 import productdelt from './controllers/deleteproduct';
 import cartdelt from './controllers/deletefromcart';
+import productedit from './controllers/editproduct';
+import cartlist from './controllers/listproductofcart';
+
 
 //dependencies
 import express from "express";
@@ -41,3 +44,5 @@ app.use('/', protectedrout);
 app.use('/',cart);
 app.use('/',productdelt);
 app.use('/',cartdelt);
+app.use('/', productedit);
+app.use('/', cartlist);
