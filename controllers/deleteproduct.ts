@@ -8,8 +8,10 @@ import { authMiddleware, AuthenticatedRequest } from "../ middleware/admin";
 // Fetch data from MongoDB
 productdelt.delete('/productdelt',authMiddleware, async  (req: AuthenticatedRequest, res: Response)=> {
   try {
-    const productdelt = await Product.deleteOne({ _id: req.body.id });
-                if(productdelt){ 
+                const theproduct = await Product.findOne({ _id: req.body.id });
+                const Z = req.user ? JSON.parse(JSON.stringify(req.user)) : null; // Convert req.user to JSON
+                if(Z){ 
+                               await Product.deleteOne({ _id: req.body.id });
                                // Send a success response
                                res.status(200).json({ message: "delete successful" });              
                                }
