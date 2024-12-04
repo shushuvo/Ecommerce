@@ -16,6 +16,7 @@ import productedit from './controllers/editproduct';
 import cartlist from './controllers/listproductofcart';
 
 
+
 //dependencies
 import express from "express";
 import mongoose from "mongoose";
@@ -46,3 +47,4 @@ app.use('/',productdelt);
 app.use('/',cartdelt);
 app.use('/', productedit);
 app.use('/', cartlist);
+

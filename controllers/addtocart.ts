@@ -18,10 +18,10 @@ console.log('Request body:', body);
 //res.json({ message: 'Data received', body }); DON'T SEND MULTIPLE RESPONSE IT WILL CAUSE ERROR
         try{            
                 const productlist = await Product.findOne({_id:body.productid}); // Fetch all  
-                const Z = productlist ? JSON.parse(JSON.stringify(req.user)) : null; // Convert req.user to JSON 
+                const Z = productlist ? JSON.parse(JSON.stringify(productlist)) : null; // Convert req.user to JSON 
                 const pamount = Z.productammount;
                 const pamounttonumber = Number(pamount);
-                
+                console.log(productlist);
                 if(pamounttonumber>0){   
                 // Insert a new user
                 const newCart = new Cart({

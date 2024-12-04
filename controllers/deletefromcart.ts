@@ -12,7 +12,7 @@ cartdelt.delete('/cartdelt', authMiddleware, async (req: AuthenticatedRequest, r
 const X = req.user ? JSON.parse(JSON.stringify(req.user)) : null; // Convert req.user to JSON
   try {
                 const cartinfo = await Cart.findOne({ username: X.email, productid: req.body.productid });
-                const Z = cartinfo ? JSON.parse(JSON.stringify(req.user)) : null; // Convert req.user to JSON
+                const Z = cartinfo ? JSON.parse(JSON.stringify(cartinfo)) : null; // Convert req.user to JSON
                 if(Z){ 
                               await Cart.deleteOne({ username: X.email, productid: req.body.productid });
                                // Send a success response
