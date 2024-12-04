@@ -68,6 +68,9 @@ src/
 - **Jsonwebtoken**
 - **Bcryptjs**
 ---
+## **Key topic**:
+- **json array of objects**
+---
 ## **Issues**:
 - **Post request body undefined**:
     - `npm install body-parser`
