@@ -40,7 +40,8 @@ export const samorder = async (Z: any[],req:Request, res: Response)=> {
                                                               customer:Z[i].username
                                                             });
                                                  }                                                
-  res.status(200).json(fullfinalresult);
+  //res.status(200).json(fullfinalresult);
+  return(fullfinalresult);
   } 
   catch (error) {
   console.error('Error fetching users:', error);

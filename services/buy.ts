@@ -16,7 +16,7 @@ const X = req.user ? JSON.parse(JSON.stringify(req.user)) : null; // Convert req
                 const Z = cartinfo ? JSON.parse(JSON.stringify(cartinfo)) : null; // Convert req.user to JSON
                 if(Z){ 
                               for (let i = 0; i < Z.length; i++) {
-                                await Cart.deleteOne({ username: Z[i].email });
+                                await Cart.deleteOne({ username: Z[i].username });
                                 // Insert a new order
                                 const newOrder = new Order({
                                 username: X.email,

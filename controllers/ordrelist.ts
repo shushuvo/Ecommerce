@@ -5,6 +5,7 @@ import { samorder } from '../services/ordersumary';
 import { authMiddleware, AuthenticatedRequest } from "../ middleware/admin";
 const orderlist = Router();
 const userarray: any[] =[]
+const fullfinalresultplus: any[] =[]
 // Fetch data from MongoDB
 orderlist.get('/orderlist', authMiddleware, async (req: AuthenticatedRequest, res: Response)=> {
     try 
@@ -19,12 +20,14 @@ orderlist.get('/orderlist', authMiddleware, async (req: AuthenticatedRequest, re
     // Sort the array
     uniqueArray.sort((a, b) => a - b); 
     console.log(uniqueArray);
-   // for (let i = 0; i < uniqueArray.length; i++) {
-                                                 const oneorderlist = await Order.find({username: uniqueArray[0]}); // Fetch all 
+    for (let i = 0; i < uniqueArray.length; i++) {
+                                                 const oneorderlist = await Order.find({username: uniqueArray[i]}); // Fetch all 
                                                  const Z = oneorderlist ? JSON.parse(JSON.stringify(oneorderlist)) : null; // Convert req.user to JSON                   
                                                  console.log(Z);
-                                                 await samorder(Z, req, res);
-                                          //       }
+                                                 const XY = await samorder(Z, req, res);
+                                                 fullfinalresultplus.push(XY);
+                                                }
+    res.status(200).json(fullfinalresultplus);
     } catch (error) {
     console.error('Error fetching users:', error);
     res.status(500).json({ message: 'Internal server error' });
