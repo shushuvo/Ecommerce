@@ -12,7 +12,7 @@ const body = req.body;
 console.log('Request body:', body); 
 res.json({ message: 'Data received', body }); 
                 
-                // Insert a new user
+                // Insert a new product
                 const newProduct = new Product({
                 productname: body.productname,
                 productammount: body.productammount,

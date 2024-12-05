@@ -14,7 +14,8 @@ import productdelt from './controllers/deleteproduct';
 import cartdelt from './controllers/deletefromcart';
 import productedit from './controllers/editproduct';
 import cartlist from './controllers/listproductofcart';
-
+import buyall from './services/buy';
+import orderlist from './controllers/ordrelist';
 
 
 //dependencies
@@ -47,4 +48,5 @@ app.use('/',productdelt);
 app.use('/',cartdelt);
 app.use('/', productedit);
 app.use('/', cartlist);
-
+app.use('/', buyall);
+app.use('/',orderlist);
