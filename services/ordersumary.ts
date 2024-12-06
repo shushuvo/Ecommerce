@@ -34,10 +34,14 @@ export const samorder = async (Z: any[],req:Request, res: Response)=> {
     for (let i = 0; i < frestojson.length; i++) {
                                        const productid = frestojson[i].element;
                                        const productlist = await Product.findOne({_id:productid}); // Fetch one  
+                                       const p = productlist?.price; const pint = Number(p);
+                                       const c = frestojson[i].count; const cint = Number(c);
+                                       const totalprice = pint * cint;
                                        fullfinalresult.push({ name: productlist?.productname, 
                                                               count: frestojson[i].count, 
                                                               productid: frestojson[i].element,
-                                                              customer:Z[i].username
+                                                              customer:Z[i].username,
+                                                              price: totalprice
                                                             });
                                                  }                                                
   //res.status(200).json(fullfinalresult);

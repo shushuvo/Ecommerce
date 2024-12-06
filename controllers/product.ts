@@ -16,6 +16,7 @@ res.json({ message: 'Data received', body });
                 const newProduct = new Product({
                 productname: body.productname,
                 productammount: body.productammount,
+                price: body.price,
                 });
     
                 // Save the user to the database
