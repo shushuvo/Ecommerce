@@ -23,7 +23,7 @@ import express from "express";
 import mongoose from "mongoose";
 import bodyParser from 'body-parser';
 import cookieParser from "cookie-parser";
-
+import orderdelt from './controllers/delivered';
 
 const app = express();
 app.listen(3000,()=>{console.log("server_running")});
@@ -50,3 +50,4 @@ app.use('/', productedit);
 app.use('/', cartlist);
 app.use('/', buyall);
 app.use('/',orderlist);
+app.use('/',orderdelt);

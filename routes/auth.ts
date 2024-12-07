@@ -13,6 +13,7 @@ const loginjwt = Router();
 loginjwt.post('/login', async (req, res) => {
   try {
     const loginjwt = await User.findOne({ email: req.body.email });
+    console.log(loginjwt);
                 if(loginjwt){
                            // res.status(200).json(loginjwt); 
                                         if(loginjwt.password == req.body.password)
