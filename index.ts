@@ -16,7 +16,9 @@ import productedit from './controllers/editproduct';
 import cartlist from './controllers/listproductofcart';
 import buyall from './services/buy';
 import orderlist from './controllers/ordrelist';
-
+import joinlotary from './lotary/takepartinlotary';
+import lotaryresult from './lotary/result';
+import listofperticipents from './lotary/listofperticipents';
 
 //dependencies
 import express from "express";
@@ -51,3 +53,6 @@ app.use('/', cartlist);
 app.use('/', buyall);
 app.use('/',orderlist);
 app.use('/',orderdelt);
+app.use('/', joinlotary);
+app.use('/',lotaryresult);
+app.use('/',listofperticipents); 
