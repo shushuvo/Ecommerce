@@ -5,6 +5,8 @@ const ProductSchema = new mongoose.Schema({
   productname: String,
   productammount: String,
   price: String,
+  offer: String,
+  offerprice: String,
 },
 {
   collection: "product", // Specify collection name here

@@ -19,6 +19,10 @@ import orderlist from './controllers/ordrelist';
 import joinlotary from './lotary/takepartinlotary';
 import lotaryresult from './lotary/result';
 import listofperticipents from './lotary/listofperticipents';
+import walletlist from './wallet/listwallet';
+import ifwallet from './wallet/ifw';
+import withdraw from './withdraw/withdraw';
+import withdrawlist from './withdraw/withdrawlist';
 
 //dependencies
 import express from "express";
@@ -53,6 +57,10 @@ app.use('/', cartlist);
 app.use('/', buyall);
 app.use('/',orderlist);
 app.use('/',orderdelt);
-app.use('/', joinlotary);
+app.use('/',joinlotary);
 app.use('/',lotaryresult);
 app.use('/',listofperticipents); 
+app.use('/',walletlist);
+app.use('/',ifwallet);
+app.use('/',withdraw);
+app.use('/',withdrawlist);

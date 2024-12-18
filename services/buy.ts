@@ -2,15 +2,20 @@ import { Router, Response} from "express";
 
 import { Cart } from "../modles/cart";
 import { Order } from "../modles/orderlist";
+import { Product } from "../modles/products";
+import { Wallet } from "../modles/wallet";
 
 const buyall = Router();
 
 //varify import section
 import { authMiddleware, AuthenticatedRequest } from "../ middleware/verify";
 
+import { dltifused } from "../wallet/dltifused";
+
 // Fetch data from MongoDB
 buyall.post('/buyall', authMiddleware, async (req: AuthenticatedRequest, res: Response) => {
 const X = req.user ? JSON.parse(JSON.stringify(req.user)) : null; // Convert req.user to JSON
+await dltifused(X,req,res);
   try {
                 const cartinfo = await Cart.find({ username: X.email});
                 const Z = cartinfo ? JSON.parse(JSON.stringify(cartinfo)) : null; // Convert req.user to JSON
@@ -22,7 +27,20 @@ const X = req.user ? JSON.parse(JSON.stringify(req.user)) : null; // Convert req
                                 username: X.email,
                                 productid: Z[i].productid,
                                 });
-        
+                               const inwpoint = Number(await Wallet.findOne({ username: X.email }));
+                               await Wallet.deleteOne({ username: X.email }); 
+                               const price = Number(await Product.findOne({ _id: Z[i].productid }));
+                               const offer = Number(Z[i].offer);
+                               const point = price/100;
+                               const w_point = point*offer;
+                               const wpoint = w_point + inwpoint;
+                               const newWallet = new Wallet({
+                                  username: X.email,
+                                  wpoint: wpoint,
+                               })
+                               newWallet.save().then(()=>{
+                                console.log("wallet point saved");
+                               })
                                 // Save the user to the database
                                 newOrder
                                 .save()

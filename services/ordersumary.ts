@@ -1,5 +1,6 @@
 import { Router, Response, Request } from 'express';
 import { Product } from "../modles/products";
+import { ifused } from '../wallet/ifused';
 
 // Fetch data from MongoDB
 export const samorder = async (Z: any[],req:Request, res: Response)=> {
@@ -45,7 +46,7 @@ export const samorder = async (Z: any[],req:Request, res: Response)=> {
                                                             });
                                                  }                                                
   //res.status(200).json(fullfinalresult);
-  return(fullfinalresult);
+  await ifused(fullfinalresult,req,res);
   } 
   catch (error) {
   console.error('Error fetching users:', error);
