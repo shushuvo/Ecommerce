@@ -8,12 +8,12 @@ const productedit = Router();
 import { authMiddleware, AuthenticatedRequest } from "../ middleware/admin";
 // Update product section
 productedit.put('/productedit',authMiddleware, (req: AuthenticatedRequest, res: Response) => {
-    const { productId, productname, productammount } = req.body; // Extracting fields from the request body
+    const { productId, productname, productammount, price, offer, offerprice } = req.body; // Extracting fields from the request body
 
     // Find and update the product
     Product.findByIdAndUpdate(
         productId, // ID of the product to update
-        { productname, productammount }, // Fields to update
+        { productname, productammount, price, offer, offerprice }, // Fields to update
         { new: true } // Return the updated document
     )
         .then((updatedProduct) => {
