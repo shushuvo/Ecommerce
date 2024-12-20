@@ -85,6 +85,13 @@ src/
 - **Post request body undefined**:
     - `npm install body-parser`
 ---
+## **Note**:
+- **To deploy on firebase some changes has to be made**:
+    - `firebase init`
+    - `add this in the end of tsconfig.json
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]`
+---
 ## **How to Run**
 
 1. **Compile TypeScript:**  
