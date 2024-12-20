@@ -18,6 +18,9 @@ This project is a backend for an e-commerce application built using **Node.js** 
    npm install bcryptjs @types/bcryptjs
    npm install cookie-parser @types/cookie-parser
    npm install firebase-tools
+   npm install firebase-functions
+   npm install firebase-admin
+
    
    ```
 3. **Setup TypeScript Configuration**  
