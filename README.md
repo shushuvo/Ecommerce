@@ -17,11 +17,7 @@ This project is a backend for an e-commerce application built using **Node.js** 
    npm install jsonwebtoken @types/jsonwebtoken
    npm install bcryptjs @types/bcryptjs
    npm install cookie-parser @types/cookie-parser
-   npm install firebase-tools
-   npm install firebase-functions
-   npm install firebase-admin
-
-   
+ 
    ```
 3. **Setup TypeScript Configuration**  
    Initialize TypeScript:  
@@ -71,7 +67,7 @@ src/
 - **Mongo db atlas**
 - **Jsonwebtoken**
 - **Bcryptjs**
-- **Firebase**
+- **Vercel**
 ---
 ## **Key topic**:
 - **json array of objects**
@@ -84,10 +80,6 @@ src/
 ## **Issues**:
 - **Post request body undefined**:
     - `npm install body-parser`
----
-## **Note**:
-- **To deploy on firebase some changes has to be made**:
-    - `firebase init functions`
 ---
 ## **How to Run**
 
