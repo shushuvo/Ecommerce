@@ -87,7 +87,7 @@ src/
 ---
 ## **Note**:
 - **To deploy on firebase some changes has to be made**:
-    - `firebase init`
+    - `firebase init functions`
 ---
 ## **How to Run**
 
