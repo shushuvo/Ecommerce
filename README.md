@@ -80,6 +80,23 @@ src/
 - **Post request body undefined**:
     - `npm install body-parser`
 ---
+## **tsconfig.json**:
+```
+{
+  "compilerOptions": {
+    "target": "es2016",  //the version that gets set after tsc --init                                 
+    "module": "commonjs",                                
+    "rootDir": "./src",                                  
+    "outDir": "./dist",                                  
+    "esModuleInterop": true,                             
+    "forceConsistentCasingInFileNames": true,           
+    "strict": true,                                     
+    "skipLibCheck": true                                 
+  }
+}
+
+```
+---
 ## **How to Run**
 
 1. **Compile TypeScript:**  
