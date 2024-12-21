@@ -17,7 +17,6 @@ This project is a backend for an e-commerce application built using **Node.js** 
    npm install jsonwebtoken @types/jsonwebtoken
    npm install bcryptjs @types/bcryptjs
    npm install cookie-parser @types/cookie-parser
-   npm install vercel
  
    ```
 3. **Setup TypeScript Configuration**  
@@ -68,7 +67,6 @@ src/
 - **Mongo db atlas**
 - **Jsonwebtoken**
 - **Bcryptjs**
-- **Vercel**
 ---
 ## **Key topic**:
 - **json array of objects**
