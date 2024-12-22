@@ -17,7 +17,7 @@ This project is a backend for an e-commerce application built using **Node.js** 
    npm install jsonwebtoken @types/jsonwebtoken
    npm install bcryptjs @types/bcryptjs
    npm install cookie-parser @types/cookie-parser
-   
+ 
    ```
 3. **Setup TypeScript Configuration**  
    Initialize TypeScript:  
@@ -73,10 +73,29 @@ src/
 ---
 ## **Extra**:
 - **Lotary functionality in lotary folder**
+- **Credit functionality in wallet folder**
+- **Withdraw functionality in withdraw folder**
 ---
 ## **Issues**:
 - **Post request body undefined**:
     - `npm install body-parser`
+---
+## **tsconfig.json**:
+```
+{
+  "compilerOptions": {
+    "target": "es2016",  //the version that gets set after tsc --init                                 
+    "module": "commonjs",                                
+    "rootDir": "./src",                                  
+    "outDir": "./dist",                                  
+    "esModuleInterop": true,                             
+    "forceConsistentCasingInFileNames": true,           
+    "strict": true,                                     
+    "skipLibCheck": true                                 
+  }
+}
+
+```
 ---
 ## **How to Run**
 
