@@ -1,11 +1,13 @@
 import { Router, Response, Request } from 'express';
 import { Product } from "../modles/products";
+import { ifused } from '../wallet/ifused';
 
 // Fetch data from MongoDB
 export const samorder = async (Z: any[],req:Request, res: Response)=> {
     console.log(Z); 
     try {
     const idarray =[]
+    const allinfo: any[] =[]
     const finalresult: any[] =[]
     const fullfinalresult: any[] =[]
     // Using a for loop to iterate over the array
@@ -45,12 +47,13 @@ export const samorder = async (Z: any[],req:Request, res: Response)=> {
                                                             });
                                                  }                                                
   //res.status(200).json(fullfinalresult);
-  return(fullfinalresult);
+  const ifusedX = await ifused(fullfinalresult,req,res);
+  allinfo.push(fullfinalresult);
+  allinfo.push(ifusedX);
+  return(allinfo);
   } 
   catch (error) {
   console.error('Error fetching users:', error);
   res.status(500).json({ message: 'Internal server error' });
   }
 };
-
-

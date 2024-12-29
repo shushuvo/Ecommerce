@@ -23,8 +23,11 @@ orderlist.get('/orderlist', authMiddleware, async (req: AuthenticatedRequest, re
     for (let i = 0; i < uniqueArray.length; i++) {
                                                  const oneorderlist = await Order.find({username: uniqueArray[i]}); // Fetch all 
                                                  const Z = oneorderlist ? JSON.parse(JSON.stringify(oneorderlist)) : null; // Convert req.user to JSON                   
+                                                 
                                                  console.log(Z);
                                                  const XY = await samorder(Z, req, res);
+                                                 console.log("------------------");
+                                                 console.log(XY);
                                                  fullfinalresultplus.push(XY);
                                                 }
     res.status(200).json(fullfinalresultplus);

@@ -19,6 +19,8 @@ import orderlist from './controllers/ordrelist';
 import joinlotary from './lotary/takepartinlotary';
 import lotaryresult from './lotary/result';
 import listofperticipents from './lotary/listofperticipents';
+import walletlist from './wallet/listwallet';
+import ifwallet from './wallet/ifw';
 
 //dependencies
 import express from "express";
@@ -56,3 +58,5 @@ app.use('/',orderdelt);
 app.use('/', joinlotary);
 app.use('/',lotaryresult);
 app.use('/',listofperticipents); 
+app.use('/',walletlist);
+app.use('/',ifwallet);

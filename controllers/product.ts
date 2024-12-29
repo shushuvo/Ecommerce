@@ -17,6 +17,8 @@ res.json({ message: 'Data received', body });
                 productname: body.productname,
                 productammount: body.productammount,
                 price: body.price,
+                offer: body.offer,
+                offerprice: body.offerprice,
                 });
     
                 // Save the user to the database

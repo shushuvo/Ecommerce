@@ -2,6 +2,8 @@ import { Router, Response} from "express";
 
 import { Cart } from "../modles/cart";
 import { Order } from "../modles/orderlist";
+import { Wallet } from "../modles/wallet";
+import { Product } from "../modles/products";
 
 const buyall = Router();
 
@@ -22,7 +24,42 @@ const X = req.user ? JSON.parse(JSON.stringify(req.user)) : null; // Convert req
                                 username: X.email,
                                 productid: Z[i].productid,
                                 });
-        
+                                try
+                                {
+                                  const inwpointemp = await Wallet.findOne({ username: X.email });
+                                  const Zinwpointemp = inwpointemp ? JSON.parse(JSON.stringify(inwpointemp)) : null; 
+                                  const inwpoint = Number(Zinwpointemp.wpoint);
+                                  await Wallet.deleteOne({ username: X.email }); 
+                                  const pricetemp = await Product.findOne({ _id: Z[i].productid });
+                                  const price = Number(pricetemp?.price);
+                                  const offer = Number(pricetemp?.offer);
+                                  const point = price/100;
+                                  const w_point = point*offer;
+                                  const wpoint = w_point + inwpoint;
+                                  const newWallet = new Wallet({
+                                     username: X.email,
+                                     wpoint: wpoint,
+                                  })
+                                  newWallet.save().then(()=>{
+                                   console.log("wallet point saved");
+                                  })
+                                }
+                                catch
+                                {
+                                  const pricetemp = await Product.findOne({ _id: Z[i].productid });
+                                  const price = Number(pricetemp?.price);
+                                  const offer = Number(pricetemp?.offer);
+                                  const point = price/100;
+                                  const w_point = point*offer;
+                                  const wpoint = w_point;
+                                  const newWallet = new Wallet({
+                                     username: X.email,
+                                     wpoint: wpoint,
+                                  })
+                                  newWallet.save().then(()=>{
+                                   console.log("wallet point saved");
+                                  })                              
+                                }        
                                 // Save the user to the database
                                 newOrder
                                 .save()
