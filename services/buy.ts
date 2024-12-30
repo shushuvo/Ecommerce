@@ -66,7 +66,8 @@ const X = req.user ? JSON.parse(JSON.stringify(req.user)) : null; // Convert req
                                 .then(() => {
                                 console.log("order saved successfully");
                                 })
-                            }res.status(200).json("order is made ^_^ ");                                     
+                            }
+                            res.status(200).json("order is made ^_^ ");                                     
                      }
                 else{res.status(404).json("cart not found"); }
   } catch (error) {

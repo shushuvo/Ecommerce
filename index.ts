@@ -21,6 +21,8 @@ import lotaryresult from './lotary/result';
 import listofperticipents from './lotary/listofperticipents';
 import walletlist from './wallet/listwallet';
 import ifwallet from './wallet/ifw';
+import withdraw from './withdraw/withdraw';
+import withdrawlist from './withdraw/withdrawlist';
 
 //dependencies
 import express from "express";
@@ -60,3 +62,5 @@ app.use('/',lotaryresult);
 app.use('/',listofperticipents); 
 app.use('/',walletlist);
 app.use('/',ifwallet);
+app.use('/',withdraw);
+app.use('/',withdrawlist);
