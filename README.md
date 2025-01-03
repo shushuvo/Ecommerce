@@ -17,7 +17,6 @@ This project is a backend for an e-commerce application built using **Node.js** 
    npm install jsonwebtoken @types/jsonwebtoken
    npm install bcryptjs @types/bcryptjs
    npm install cookie-parser @types/cookie-parser
- 
    ```
 3. **Setup TypeScript Configuration**  
    Initialize TypeScript:  
@@ -79,6 +78,8 @@ src/
 ## **Issues**:
 - **Post request body undefined**:
     - `npm install body-parser`
+- **Cross origin erro**:
+    - `npm install cors @types/cors`
 ---
 ## **tsconfig.json**:
 ```
@@ -95,6 +96,31 @@ src/
   }
 }
 
+```
+---
+## **used versions**:
+```
+{
+  "dependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cookie-parser": "^1.4.8",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/jsonwebtoken": "^9.0.7",
+    "@types/mongoose": "^5.11.96",
+    "@types/node": "^22.10.2",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.9.2",
+    "typescript": "^5.7.2"
+  }
+}
+node 22.11.0
+tsc 5.7.2
 ```
 ---
 ## **How to Run**

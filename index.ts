@@ -23,15 +23,25 @@ import walletlist from './wallet/listwallet';
 import ifwallet from './wallet/ifw';
 import withdraw from './withdraw/withdraw';
 import withdrawlist from './withdraw/withdrawlist';
+import orderdelt from './controllers/delivered';
 
 //dependencies
 import express from "express";
 import mongoose from "mongoose";
 import bodyParser from 'body-parser';
 import cookieParser from "cookie-parser";
-import orderdelt from './controllers/delivered';
+import cors from "cors";
+
 
 const app = express();
+// CORS options
+const corsOptions = {
+    origin: '*', // Allowed origin
+    methods: 'GET,POST,PUT,DELETE', // Allowed methods
+    allowedHeaders: 'Content-Type, Authorization', // Allowed headers
+    credentials: true, // Allow credentials like cookies
+  };
+app.use(cors(corsOptions)); // Apply CORS middleware
 app.listen(3000,()=>{console.log("server_running")});
 
 mongoose.connect("mongodb+srv://petdoe4:thisismyworkspace@cluster0.qvxh7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
